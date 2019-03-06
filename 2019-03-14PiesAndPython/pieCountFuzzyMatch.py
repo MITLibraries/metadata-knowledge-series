@@ -3,8 +3,8 @@ from fuzzywuzzy import fuzz
 
 pieListFull = []
 
-#create full list of values from spreadsheet
-with open('input.csv','r') as csvfile:
+# create full list of values from spreadsheet
+with open('input.csv', 'r') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         pie = row['pie']
@@ -20,7 +20,7 @@ for pie in pieListFull:
             partialRatio = fuzz.partial_ratio(pie, pie2)
             tokenSort = fuzz.token_sort_ratio(pie, pie2)
             tokenSet = fuzz.token_set_ratio(pie, pie2)
-            avg = (ratio+partialRatio+tokenSort+tokenSet)/4
+            avg = (ratio + partialRatio + tokenSort + tokenSet) / 4
             if avg > 70:
                 nearMatch = [str(avg), pie, pie2]
                 nearMatch = sorted(nearMatch)
@@ -29,8 +29,8 @@ for pie in pieListFull:
         else:
             pass
 
-#write csv of near matches
-f=csv.writer(open('pieNearMatches.csv', 'w'))
-f.writerow(['matchPercentage']+['pie1']+['pie2'])
+# write csv of near matches
+f = csv.writer(open('pieNearMatches.csv', 'w'))
+f.writerow(['matchPercentage'] + ['pie1'] + ['pie2'])
 for nearMatch in completeNearMatches:
-    f.writerow([nearMatch[0]]+[nearMatch[1]]+[nearMatch[2]])
+    f.writerow([nearMatch[0]] + [nearMatch[1]] + [nearMatch[2]])
