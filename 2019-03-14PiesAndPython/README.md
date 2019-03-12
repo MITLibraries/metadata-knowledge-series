@@ -7,8 +7,8 @@ A CSV file of sample data.
 #### [pieCountDict.py](pieCountDict.py)
 Extract values from the input CSV using lists and the csv.DictReader function.
 
-#### [pieCountFuzzyMatch.py](/pieCountFuzzyMatch.py)
+#### [pieCountFuzzyMatch.py](pieCountFuzzyMatch.py)
 Uses the fuzzywuzzy library to find similar values in the input CSV.
 
-#### [pieCountLists.py](/pieCountLists.py)
+#### [pieCountLists.py](pieCountLists.py)
 Extract values from the input CSV using lists and the csv.reader function.
