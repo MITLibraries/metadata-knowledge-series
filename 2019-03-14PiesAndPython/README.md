@@ -1,6 +1,9 @@
 # 2019-03-14 Pies And Python
 Scripts referenced in the 2019-03-14 Pies and Python presentation.
 
+#### [input.csv](input.csv)
+A CSV file of sample data.
+
 #### [pieCountDict.py](pieCountDict.py)
 Extract values from the input CSV using lists and the csv.DictReader function.
 
